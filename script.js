@@ -72,42 +72,71 @@ Init a function to play the round playRound(player,computer )
 
 let computerScore = 0;
 let playerScore = 0;
-let computerScoreElement = document.querySelector(".computerScore")
-let playerScoreElement = document.querySelector(".playerScore")
-let statusElement = document.querySelector(".status")
+let computerScoreElement = document.querySelector(".computerScore");
+let playerScoreElement = document.querySelector(".playerScore");
+let statusElement = document.querySelector(".status");
 let roundCount = 0;
-let buttons = document.querySelectorAll(".choice")
+let buttons = document.querySelectorAll(".choice");
 let computerChoice;
 let playerChoice;
-let computerChoiceElement = document.querySelector(".computerChoice")
-let playerChoiceElement = document.querySelector(".playerChoice")
+let computerChoiceElement = document.querySelector(".computerChoice");
+let playerChoiceElement = document.querySelector(".playerChoice");
 
-function getComputerChoice(){
-    let randomNumber = Math.floor(Math.random() * 3) + 1
-    switch(randomNumber){
-        case 1:
-        return "rock"
-        case 2:
-        return "paper"
-        case 3:
-        return "scissors"
+function getComputerChoice() {
+  let randomNumber = Math.floor(Math.random() * 3) + 1;
+  switch (randomNumber) {
+    case 1:
+      return "rock";
+    case 2:
+      return "paper";
+    case 3:
+      return "scissors";
+  }
+}
+
+buttons.forEach(ele => {
+  ele.addEventListener("click", () => {
+    playerChoice = ele.textContent;
+    computerChoice = getComputerChoice();
+    playRound(computerChoice, playerChoice);
+  });
+});
+
+function playRound(computer, player) {
+  if (!(roundCount <= 5)) {
+    return;
+  }
+  computerChoiceElement.innerHTML = `computer chose ${computer}`;
+  playerChoiceElement.innerHTML = `player chose ${player}`;
+  if (player == computer) {
+    // in case of tie
+    statusElement.innerHTML = "Tie";
+    return;
+  }
+  // cases
+  if (computer == "rock") {
+    if (player == "scissors") {
+      computerScore++;
+      computerScoreElement.innerHTML = `computer score is: [${computerScore}]`;
+    } else if (player == "paper") {
+      playerScore++;
+      playerScoreElement.innerHTML = `player score is: [${playerScore}]`;
     }
+  } else if (computer == "scissors") {
+    if (player == "paper") {
+      computerScore++;
+      computerScoreElement.innerHTML = `computer score is: [${computerScore}]`;
+    } else if (player == "rock") {
+      playerScore++;
+      playerScoreElement.innerHTML = `player score is: [${playerScore}]`;
+    }
+  } else if (computer == "paper") {
+    if (player == "rock") {
+      computerScore++;
+      computerScoreElement.innerHTML = `computer score is: [${computerScore}]`;
+    } else if (player == "scissors") {
+      playerScore++;
+      playerScoreElement.innerHTML = `player score is: [${playerScore}]`;
+    }
+  }
 }
-
-buttons.forEach((ele) =>{
-    ele.addEventListener("click", () =>{
-        playerChoice = ele.textContent;
-        computerChoice = getComputerChoice()
-        playRound(computerChoice, playerChoice)
-    })
-})
-
-function playRound(computer, player){
-    console.log(`
-    computer chose ${computer}
-    player chose ${player}
-    `)
-}
-
-
-
