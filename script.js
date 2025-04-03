@@ -3,7 +3,7 @@ let playerScore = 0;
 let computerScoreElement = document.querySelector(".computerScore");
 let playerScoreElement = document.querySelector(".playerScore");
 let statusElement = document.querySelector(".status");
-let roundCount = 0;
+let roundCount = 1;
 let buttons = document.querySelectorAll(".choice");
 let computerChoice;
 let playerChoice;
@@ -28,13 +28,13 @@ document.querySelector(".choices").addEventListener("click", e => {
   if (e.target.classList.contains("choice")) {
     playerChoice = e.target.textContent;
     computerChoice = getComputerChoice();
-    statusElement.innerHTML = "";
+    statusElement.textContent = "";
     playRound(computerChoice, playerChoice);
   }
 });
 
 function playRound(computer, player) {
-  roundCountElement.innerHTML = `
+  roundCountElement.textContent = `
   round: ${roundCount}
   `;
   
@@ -42,40 +42,41 @@ function playRound(computer, player) {
   if (roundCount == 5) {
     
     if (playerScore > computerScore) {
-      statusElement.innerHTML = `player won the game with the a score of [${playerScore}]`;
+      statusElement.textContent = `player won the game with the a score of [${playerScore}]`;
     } else if (computerScore > playerScore) {
-      statusElement.innerHTML = `computer won the game with a score of [${computerScore}]`;
+      statusElement.textContent = `computer won the game with a score of [${computerScore}]`;
     } else {
-      statusElement.innerHTML = `Tie`;
+      statusElement.textContent = `Tie`;
     }
 
     // disable the choice buttons to make the player unable to do changes to the final result
     buttons.forEach(ele => {
       ele.disabled = true;
     });
+    return
   }
   
   // beginning of the round
   roundCount++;
-  computerChoiceElement.innerHTML = `computer chose <span>${computer}</span>`;
-  playerChoiceElement.innerHTML = `player chose <span>${player}</span>`;
+  computerChoiceElement.textContent = `Computer chose ${computer}`;
+  playerChoiceElement.textContent = `Player chose ${player}`;
 
   // in case of tie
   if (player == computer) {
-    statusElement.innerHTML = "This round is Tie";
+    statusElement.textContent = "This round is Tie";
     return;
   }
 
   function computerWins() {
     computerScore++;
-    computerScoreElement.innerHTML = `computer score is: [${computerScore}]`;
-    statusElement.innerHTML = "Computer won this round";
+    computerScoreElement.textContent = computerScore;
+    statusElement.textContent = "Computer won this round";
   }
 
   function playerWins() {
     playerScore++;
-    playerScoreElement.innerHTML = `player score is: [${playerScore}]`;
-    statusElement.innerHTML = "Player won this round";
+    playerScoreElement.textContent = playerScore;
+    statusElement.textContent = "Player won this round";
   }
 
   // cases

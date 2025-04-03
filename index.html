@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Rock Paper Scissors game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>
-        Rock Paper Scissors game
+      Rock Paper Scissors game
     </h1>
-    
+
     <!-- Main container -->
     <main>
-        <h4 class="roundCountElement">
-            round: 
-        </h4>
-        <div class="content">
-               
-                <div class="scores">
-                        <div class="playerScore">
-                            player score is: [0]
-                        </div>
-                        <div class="computerScore">
-                            computer score is: [0]
-                        </div>
-                    </div>
-
-           <div class="choices">
-            <button class="choice" id="rock">rock</button>
-            <button class="choice" id='scissors'>scissors</button>
-            <button class="choice" id="paper">paper</button>
-           </div>
-
-           <div class="status">
-                waiting for the game to start
+      <h4 class="roundCountElement">
+        round:
+      </h4>
+      <div class="content">
+        <div class="scores">
+          <div class="score playerScoreContainer">
+            <div class="playerScore">
+              0
             </div>
-            
-            <div class="computerChoice">
-            
-            </div>
-            <div class="playerChoice">
-            </div>
-            
+            <span>Player</span>
 
-           
+          </div>
+          <div class="score computerScoreContainer">
+            <div class="computerScore">
+              0
+            </div>
+            <span>Computer</span>
+
+          </div>
         </div>
 
+        <div class="choices">
+          <button class="choice" id="rock">rock</button>
+          <button class="choice" id="scissors">scissors</button>
+          <button class="choice" id="paper">paper</button>
+        </div>
+
+        <div class="status">
+          waiting for the game to start
+        </div>
+
+        <div class="computerChoice"></div>
+        <div class="playerChoice"></div>
+      </div>
     </main>
     <button class="reset">
-        click to reset the game
+      click to reset the game
     </button>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,3 +1,92 @@
-.computerChoice span , .playerChoice span{
-    color: red;
+:root{
+    --body-back-color: #002626;
+    --container-back-color:#0E4749;
+    --computer-color: #95C623;
+    --user-color: #E55812;
+    --text-color: #EFE7DA;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--body-back-color);
+    display:grid;
+    place-items: center;
+    font-family: sans-serif
+}
+
+
+/* container styling */
+h1{
+    color: var(--text-color)
+}
+main{
+    background: var(--container-back-color);
+    border-radius: 2px;
+    width: 25rem
+}
+main .roundCountElement{
+    background: white;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+main .scores{
+    background: rgb(29, 136, 139);
+    padding: 3rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .scores div{
+    width: 4rem;
+    height: 4rem;
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    position:relative;
+}
+.scores div span{
+    position: absolute;
+    top: 100%;
+    left:50%;
+    transform: translate(-50%, 0%);
+    font-size: 1rem;
+}
+.scores .computerScoreContainer{
+    background: var(--computer-color);
+}
+.scores .playerScoreContainer{
+    background: var(--user-color);
+}
+main .status{
+    background: black;
+    padding: 4rem;
+    text-align: center;
+    color: var(--text-color);
+}
+main .choices{
+    display:flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+main .choice{
+    background: var(--text-color);
+    padding: 1rem;
+    border:none;
+    display:block;
+    color:black;
+    width: 5rem;
+    border-radius: 10px;
+}
+main .computerChoice,
+main .playerChoice{
+    color: var(--text-color);
+    padding: 1rem;
 }
