@@ -37,8 +37,10 @@ function playRound(computer, player) {
   roundCountElement.innerHTML = `
   round: ${roundCount}
   `;
+  
   // check the round and end it if it's the fifth round and review the scores
   if (roundCount == 5) {
+    
     if (playerScore > computerScore) {
       statusElement.innerHTML = `player won the game with the a score of [${playerScore}]`;
     } else if (computerScore > playerScore) {
@@ -51,11 +53,8 @@ function playRound(computer, player) {
     buttons.forEach(ele => {
       ele.disabled = true;
     });
-    // reseting scores
-    computerScore = 0;
-    playerScore = 0;
-    return;
   }
+  
   // beginning of the round
   roundCount++;
   computerChoiceElement.innerHTML = `computer chose <span>${computer}</span>`;
@@ -63,15 +62,16 @@ function playRound(computer, player) {
 
   // in case of tie
   if (player == computer) {
-    computerChoice = getComputerChoice();
     statusElement.innerHTML = "This round is Tie";
     return;
   }
+
   function computerWins() {
     computerScore++;
     computerScoreElement.innerHTML = `computer score is: [${computerScore}]`;
     statusElement.innerHTML = "Computer won this round";
   }
+
   function playerWins() {
     playerScore++;
     playerScoreElement.innerHTML = `player score is: [${playerScore}]`;

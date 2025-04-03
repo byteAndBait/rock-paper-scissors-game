@@ -11,35 +11,44 @@
     <h1>
         Rock Paper Scissors game
     </h1>
-<h4 class="roundCountElement">
-    round: 
-</h4>
-   <h2>Please choose</h2>
-   <div class="choices">
-    <button class="choice" id="rock">rock</button>
-    <button class="choice" id='scissors'>scissors</button>
-    <button class="choice" id="paper">paper</button>
-   </div>
-  
-    <hr>
-    <div class="computerChoice">
     
-    </div>
-    <div class="playerChoice">
-    </div>
-    <hr>
-    <div class="scores">
-        <div class="playerScore">
-            player score is: [0]
+    <!-- Main container -->
+    <main>
+        <h4 class="roundCountElement">
+            round: 
+        </h4>
+        <div class="content">
+               
+                <div class="scores">
+                        <div class="playerScore">
+                            player score is: [0]
+                        </div>
+                        <div class="computerScore">
+                            computer score is: [0]
+                        </div>
+                    </div>
+
+           <div class="choices">
+            <button class="choice" id="rock">rock</button>
+            <button class="choice" id='scissors'>scissors</button>
+            <button class="choice" id="paper">paper</button>
+           </div>
+
+           <div class="status">
+                waiting for the game to start
+            </div>
+            
+            <div class="computerChoice">
+            
+            </div>
+            <div class="playerChoice">
+            </div>
+            
+
+           
         </div>
-        <div class="computerScore">
-            computer score is: [0]
-        </div>
-    </div>
-    <hr>
-    <div class="status">
-        waiting for the game to start
-    </div>
+
+    </main>
     <button class="reset">
         click to reset the game
     </button>
