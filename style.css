@@ -1,92 +1,95 @@
 :root{
-    --body-back-color: #002626;
-    --container-back-color:#0E4749;
-    --computer-color: #95C623;
-    --user-color: #E55812;
-    --text-color: #EFE7DA;
+    --player-score-back-clr : #FF4F0F;
+    --computer-score-back-clr : #03A6A1;
+
 }
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #F5F5F5;
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--body-back-color);
-    display:grid;
-    place-items: center;
-    font-family: sans-serif
-}
-
-
-/* container styling */
-h1{
-    color: var(--text-color)
+    h1{
+        text-align:center;
+        margin: 10px 0;
+    }
 }
 main{
-    background: var(--container-back-color);
-    border-radius: 2px;
-    width: 25rem
+    width: 80%;
+    display:flex;
+    text-align: center;
+    padding: 10px;
+    margin: 60px auto;
+    flex-direction: column;
 }
 main .roundCountElement{
-    background: white;
-    text-align: center;
-    padding: 1rem 2rem;
-}
-main .scores{
-    background: rgb(29, 136, 139);
-    padding: 3rem 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-main .scores div{
-    width: 4rem;
-    height: 4rem;
-    color: var(--text-color);
-    display: grid;
-    place-items: center;
-    font-size: 2rem;
-    border-radius: 50%;
-    position:relative;
-}
-.scores div span{
-    position: absolute;
-    top: 100%;
-    left:50%;
-    transform: translate(-50%, 0%);
-    font-size: 1rem;
-}
-.scores .computerScoreContainer{
-    background: var(--computer-color);
-}
-.scores .playerScoreContainer{
-    background: var(--user-color);
+    font-size: 1.5rem;
+
+    span{
+        background: #33A1E0;
+        color: white;
+        padding:5px;
+    }
 }
 main .status{
-    background: black;
-    padding: 4rem;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-style: italic;
+    
+}
+main .scores{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:2em;
+    margin: 2em 0;
+}
+main .scores .score{
+    width:200px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
     text-align: center;
-    color: var(--text-color);
+    .playerScore{
+        background: var(--player-score-back-clr);
+    }
+    .computerScore{
+        background: var(--computer-score-back-clr)
+    }
+}
+main .scores .score .scoreCount{
+    width:100px;
+    height:100px;
+    display:grid;
+    place-items:center;
+    margin: 10px auto;
+    color:white;
+    border-radius: 50vw;
+    font-size: 2rem
 }
 main .choices{
-    display:flex;
-    padding: 2rem;
-    align-items: center;
-    justify-content: space-between;
+    margin:0 auto;
+    width:fit-content;
+    display: flex;
+    gap: 10px;
 }
-main .choice{
-    background: var(--text-color);
-    padding: 1rem;
+main .choices button{
+    background: #1C6EA4;
+    padding: 20px;
+    display:grid;
+    place-items:center;
+    font-size: 1.7rem;
+    color: white;
     border:none;
-    display:block;
-    color:black;
-    width: 5rem;
-    border-radius: 10px;
 }
-main .computerChoice,
-main .playerChoice{
-    color: var(--text-color);
-    padding: 1rem;
+ .reset{
+    background: #273F4F;
+    color: white;
+    padding: 15px 20px;
+    border:none;
 }

@@ -26,7 +26,7 @@ function getComputerChoice() {
 
 document.querySelector(".choices").addEventListener("click", e => {
   if (e.target.classList.contains("choice")) {
-    playerChoice = e.target.textContent;
+    playerChoice = e.target.id;
     computerChoice = getComputerChoice();
     statusElement.textContent = "";
     playRound(computerChoice, playerChoice);
@@ -34,8 +34,8 @@ document.querySelector(".choices").addEventListener("click", e => {
 });
 
 function playRound(computer, player) {
-  roundCountElement.textContent = `
-  round: ${roundCount}
+  roundCountElement.innerHTML = `
+  Round: <span>${roundCount}</span>
   `;
   
   // check the round and end it if it's the fifth round and review the scores

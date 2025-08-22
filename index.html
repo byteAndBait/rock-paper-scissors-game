@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Rock Paper Scissors game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
+
+    
   </head>
   <body>
     <h1>
@@ -15,38 +18,41 @@
     <!-- Main container -->
     <main>
       <h4 class="roundCountElement">
-        round:
+        Round:
       </h4>
+        <div class="status">
+          waiting for the game to start
+        </div>
       <div class="content">
         <div class="scores">
           <div class="score playerScoreContainer">
-            <div class="playerScore">
+            <h2>
+              Player
+            </h2>
+            <div class="scoreCount playerScore">
               0
             </div>
-            <span>Player</span>
+        <div class="playerChoice"></div>
 
           </div>
+
           <div class="score computerScoreContainer">
-            <div class="computerScore">
+            <h2>
+              Computer
+            </h2>
+            <div class="scoreCount computerScore">
               0
             </div>
-            <span>Computer</span>
-
+                    <div class="computerChoice"></div>
           </div>
         </div>
 
         <div class="choices">
-          <button class="choice" id="rock">rock</button>
-          <button class="choice" id="scissors">scissors</button>
-          <button class="choice" id="paper">paper</button>
+          <button class="choice" id="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+          <button class="choice" id="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
+          <button class="choice" id="paper"><i class="fa-solid fa-hand"></i></button>
         </div>
 
-        <div class="status">
-          waiting for the game to start
-        </div>
-
-        <div class="computerChoice"></div>
-        <div class="playerChoice"></div>
       </div>
     </main>
     <button class="reset">
